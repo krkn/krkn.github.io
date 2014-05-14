@@ -5,13 +5,13 @@ module.exports = ( grunt ) ->
   grunt.initConfig
     stylus:
       options:
-        compress: no
+        compress: yes
       styles:
         files:
           "assets/styles.css": "src/stylus/styles.styl"
     jade:
       options:
-        compress: no
+        compress: yes
       page:
         files:
           "index.html": "src/jade/index.jade"
