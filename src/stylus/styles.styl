@@ -1,0 +1,112 @@
+/* krkn. - We make web, app & things
+ *
+ * STYLUS/CSS Document - /assets/stylus/styles.styl
+ *
+ * started in may 2014
+ */
+
+// imports
+@import "kouto-swiss"
+
+// resets
+meyer-reset()
+
+// fonts
+font-face( "FiraSans", "./fonts/firasans/firasans", formats: eot woff )
+FiraSans = "FiraSans", font-stack( "Helvetica" )
+font-face( "Norwester", "./fonts/norwester/norwester", formats: eot woff )
+Norwester = "Norwester", FiraSans
+
+// vars
+mainColor = #163891
+textColor = #44454a
+linkColor = #0d2462
+hoverColor = #2e5fdf
+
+// breakpoints
+bkHorizontalPhone = media-query( screen, min-width 30rem )
+bkVerticalSmallTablet = media-query( screen, min-width 40rem )
+bkSmallScreen = media-query( screen, min-width 60rem )
+bkMediumScreen = media-query( screen, min-width 80rem )
+
+// ----- commons
+
+*
+    -webkit-font-smoothing antialiased
+    -webkit-text-size-adjust 100%
+
+a
+    color linkColor
+    transition color .25s ease-in-out
+    &:hover
+        color hoverColor
+
+// ----- layout
+
+html
+    background white
+    font normal 62.5%/1.5 FiraSans
+
+body
+    width 22.5rem
+    margin 5rem auto 0
+    color textColor
+
+header
+    width 22.5rem
+    margin 0 auto 3rem
+    h1
+        margin 0 auto 1rem
+        a
+            img
+                display block
+                max-width 100%
+    h2
+        margin 0 auto 1rem
+        font normal 1.8rem Norwester
+        color mainColor
+        text-align center
+
+section
+    p.important
+        margin 0 auto 3.5rem
+        font normal 1.6rem FiraSans
+        text-align center
+    div
+        margin 0 auto 2rem
+        h3
+            margin 0 auto 1rem
+            font normal 1.5rem Norwester
+            color mainColor
+            text-transform lowercase
+        p
+            a
+                font normal 1.3rem FiraSans
+                text-decoration none
+                & + a
+                    margin 0 0 0 .75rem
+
+@media bkHorizontalPhone
+    body
+        width 36rem
+    section
+        clear fix
+        div
+            width 48%
+            float left
+            text-align center
+            & + div
+                margin-left 2%
+
+@media bkVerticalSmallTablet
+    body
+        margin-top 12rem
+
+@media bkSmallScreen
+    body
+        margin-top 15rem
+
+@media bkMediumScreen
+    body
+        width 42rem
+        margin-top 24rem
